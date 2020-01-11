@@ -20,6 +20,7 @@
   "license": "MIT",
   "files": [
     "lib",
+    "dist",
     "src",
     "template",
     "index.d.ts"
@@ -37,5 +38,10 @@
     "prop-types": "15.6.2",
     "react-intl": "2.7.2",
     "umi-utils": "1.7.2"
+  },
+  "devDependencies": {
+    "antd": "^4.0.0-rc.0",
+    "umi-types": "^0.5.3",
+    "@ant-design/icons": "^4.0.0-alpha.11"
   }
 }

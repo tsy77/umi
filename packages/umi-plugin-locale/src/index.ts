@@ -151,4 +151,6 @@ export default function(api, options = {}) {
       },
     };
   });
+
+  api.addUIPlugin(require.resolve('../dist/index.umd'));
 }
