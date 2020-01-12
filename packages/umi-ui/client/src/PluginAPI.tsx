@@ -1,3 +1,4 @@
+import React from 'react';
 import { notification, message } from 'antd';
 import { connect } from 'dva';
 import lodash from 'lodash';
@@ -45,6 +46,8 @@ export default class PluginAPI {
   event: IUi.IEvent;
   moment: IUi.IMoment;
   _analyze: IUi.IAnalyze;
+  withAPI: any;
+  Context: any;
   hooks: any;
 
   constructor(service: IUi.IService, currentProject: IUi.ICurrentProject) {
@@ -77,6 +80,8 @@ export default class PluginAPI {
       ...hooks,
     };
 
+    this.Context = React.createContext({ api: this });
+
     const proxyIntl = new Proxy(intl, {
       get: (target, prop: any) => {
         if (
@@ -108,6 +113,18 @@ export default class PluginAPI {
       this.intl[intlApi] = intl[intlApi];
     });
   }
+
+  withAPI: IUi.IWithAPI = (Context, value = {}) => Component => {
+    const contextValue: any = {
+      api: this,
+      ...value,
+    };
+    return () => (
+      <Context.Provider value={contextValue}>
+        <Component {...contextValue} />
+      </Context.Provider>
+    );
+  };
 
   addConfigSection(section) {
     this.service.configSections.push(section);

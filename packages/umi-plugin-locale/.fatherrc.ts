@@ -1,5 +1,3 @@
-import react from 'react';
-
 export default [
   {
     target: 'node',
@@ -15,9 +13,6 @@ export default [
       check: false,
     },
     extraExternals: ['antd', 'react', 'react-dom'],
-    namedExports: {
-      react: Object.keys(react),
-    },
     umd: {
       name: 'locale',
       minFile: false,

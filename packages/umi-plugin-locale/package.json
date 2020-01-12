@@ -39,9 +39,16 @@
     "react-intl": "2.7.2",
     "umi-utils": "1.7.2"
   },
+  "peerDependencies": {
+    "antd": "4.x",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "umi": "2.x || ^2.9.0-0"
+  },
   "devDependencies": {
     "@ant-design/icons": "^4.0.0-alpha.11",
     "antd": "^4.0.0-rc.0",
+    "umi-ui-theme": "1.2.2",
     "umi-types": "^0.5.3"
   }
 }

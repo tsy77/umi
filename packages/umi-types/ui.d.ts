@@ -371,6 +371,11 @@ declare namespace IUI {
     // extend more hooks
   }
 
+  type IWithAPI = (
+    context: Context<{ api: any }>,
+    value?: object,
+  ) => (Component: any) => FunctionComponent;
+
   class IApiClass {
     constructor(service: IService);
     service: IService;
@@ -446,6 +451,7 @@ declare namespace IUI {
     detectLanguage: IDetectLanguage;
     detectNpmClients: () => Promise<string[]>;
     modifyBasicUI: IModifyBasicUI;
+    withAPI: IWithAPI;
   }
 
   type IApi = InstanceType<typeof IApiClass>;
