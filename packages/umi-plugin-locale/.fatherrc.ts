@@ -8,17 +8,10 @@ export default [
     browserFiles: ['src/locale.js'],
   },
   {
+    target: 'browser',
     entry: 'ui/index.tsx',
     typescriptOpts: {
       check: false,
-    },
-    nodeResolveOpts: {
-      customResolveOptions: {
-        moduleDirectory: [
-          path.join(__dirname, '..', '..', 'node_modules'),
-          path.join(__dirname, 'node_modules'),
-        ],
-      },
     },
     extraExternals: ['antd', 'react', 'react-dom'],
     umd: {
