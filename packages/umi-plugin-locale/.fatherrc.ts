@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 export default [
   {
     target: 'node',
@@ -9,6 +11,14 @@ export default [
     entry: 'ui/index.tsx',
     typescriptOpts: {
       check: false,
+    },
+    nodeResolveOpts: {
+      customResolveOptions: {
+        moduleDirectory: [
+          path.join(__dirname, '..', '..', 'node_modules'),
+          path.join(__dirname, 'node_modules'),
+        ],
+      },
     },
     extraExternals: ['antd', 'react', 'react-dom'],
     umd: {
