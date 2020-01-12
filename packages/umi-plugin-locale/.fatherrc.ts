@@ -1,4 +1,4 @@
-import * as path from 'path';
+import react from 'react';
 
 export default [
   {
@@ -10,10 +10,14 @@ export default [
   {
     target: 'browser',
     entry: 'ui/index.tsx',
+    disableTypeCheck: true,
     typescriptOpts: {
       check: false,
     },
     extraExternals: ['antd', 'react', 'react-dom'],
+    namedExports: {
+      react: Object.keys(react),
+    },
     umd: {
       name: 'locale',
       minFile: false,
