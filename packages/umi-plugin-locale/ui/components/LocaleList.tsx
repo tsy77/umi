@@ -7,10 +7,17 @@ export interface LocaleListProps {}
 
 const LocaleList: React.FunctionComponent<LocaleListProps> = props => {
   const { api } = React.useContext(Context);
+  const aaaa = api.hooks.useAsync(() =>
+    api.callRemote({
+      type: 'org.umi.locale.list',
+    }),
+  );
+
+  console.log('aaaa', aaaa);
 
   const columns = [
     {
-      title: 'Name',
+      title: '标识符',
       dataIndex: 'name',
       key: 'name',
     },
@@ -25,6 +32,16 @@ const LocaleList: React.FunctionComponent<LocaleListProps> = props => {
       dataIndex: 'address',
       width: '30%',
       key: 'address',
+    },
+    {
+      title: '操作',
+      key: 'action',
+      render: (text, record) => (
+        <span>
+          <a style={{ marginRight: 16 }}>编辑</a>
+          <a>删除</a>
+        </span>
+      ),
     },
   ];
 
@@ -93,23 +110,10 @@ const LocaleList: React.FunctionComponent<LocaleListProps> = props => {
     },
   ];
 
-  // rowSelection objects indicates the need for row selection
-  const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-    },
-    onSelect: (record, selected, selectedRows) => {
-      console.log(record, selected, selectedRows);
-    },
-    onSelectAll: (selected, selectedRows, changeRows) => {
-      console.log(selected, selectedRows, changeRows);
-    },
-  };
-
   return (
     <>
       <ListAction />
-      <Table columns={columns} rowSelection={rowSelection} dataSource={data} />
+      <Table columns={columns} dataSource={data} />
     </>
   );
 };

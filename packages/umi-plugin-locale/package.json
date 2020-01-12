@@ -32,11 +32,12 @@
     "@ant-design/create-react-context": "0.2.4",
     "globby": "7.1.1",
     "intl": "1.2.5",
-    "lodash.groupby": "4.6.0",
+    "lodash.groupby": "^4.6.0",
     "moment": "2.x",
     "mustache": "3.0.1",
     "prop-types": "15.6.2",
     "react-intl": "2.7.2",
+    "af-webpack": "1.14.6",
     "umi-utils": "1.7.2"
   },
   "peerDependencies": {

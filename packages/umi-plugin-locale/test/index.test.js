@@ -2,7 +2,8 @@ import { join } from 'path';
 import { readFileSync, unlinkSync } from 'fs';
 import { winPath } from 'umi-utils';
 
-import localePlugin, { getLocaleFileList, isNeedPolyfill } from '../src/index';
+import localePlugin from '../src/index';
+import { getLocaleFileList, isNeedPolyfill } from '../src/utils';
 
 const absSrcPath = winPath(join(__dirname, '../examples/base/src'));
 const absPagesPath = winPath(join(__dirname, '../examples/base/src/page'));
