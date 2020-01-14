@@ -4567,10 +4567,10 @@ fastparse@^1.1.1:
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.2.tgz#91728c5a5942eced8531283c79441ee4122c35a9"
   integrity sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==
 
-father-build@^1.13.1:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/father-build/-/father-build-1.17.1.tgz#e0b92dc23dd90e2e3db85433b6f5f0ca34a7d41f"
-  integrity sha512-0I2VJVBMz9lfVPJIe0SN943O+r3+qy5TU9Ugju2T9BV09Ob20HXE1/pvCy+0urSRNDxAuEUI8YS/xsOsy/NOkQ==
+father-build@^1.17.2:
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/father-build/-/father-build-1.17.2.tgz#a9a9af3150e777fb4a7789486549efb6cd9a0219"
+  integrity sha512-9o+fgQDIhhhez1XCyWYZQlgwnpGxM6bhmdlR2SWy1BZSBF3ppSoDrEWFRoFeoFsz5uKamcwDASKDoF2PVUNHjQ==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.4.4"
